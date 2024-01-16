@@ -41,6 +41,8 @@
             <strong>Color:</strong><?= $card['color'] ?> <br>
         </li>
     <?php endforeach; ?>
+    <!--Create page link-->
+        <a href="index.php?action=create">Create new item</a>
 </ul>
 
 </body>
