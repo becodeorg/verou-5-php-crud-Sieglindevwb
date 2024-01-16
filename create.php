@@ -15,6 +15,8 @@
         <label for="color">Color:</label>
         <input type="text" id="color" name="color" required>
 
+        <button type="sumit">Create new item</button>
+
     </form>
 </body>
 </html>
