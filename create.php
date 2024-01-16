@@ -16,16 +16,10 @@
             color: #333;
         }
 
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        li {
+        form {
             margin-bottom: 10px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            padding-top: 10px;
+            padding-bottom: 10px;
         }
         .create-link {
             display: block;
@@ -39,7 +33,7 @@
 <body>
     <h1>Create new dried flower item</h1>
 
-    <a href="index.php">Back to Overview</a>
+    <a href="index.php" class="create-link">Back to Overview</a>
 
     <form action="index.php?action=create" method="post">
         <label for="name">Name:</label>
