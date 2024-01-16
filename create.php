@@ -10,7 +10,10 @@
 
     <form action="index.php?action=create" method="post">
         <label for="name">Name:</label>
-        
+        <input type="text" id="name" name="name" required>
+
+        <label for="color">Color:</label>
+        <input type="text" id="color" name="color" required>
 
     </form>
 </body>
