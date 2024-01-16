@@ -28,11 +28,19 @@
             border: 1px solid #ddd;
             border-radius: 5px;
         }
+        .create-link {
+            display: block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007BFF;
+        }
     </style>
 </head>
 <body>
 
 <h1>Flowerpower - track your collection of dried flowers</h1>
+
+<a href="index.php?action=create" class="create-link">Create new item</a>
 
 <ul>
     <?php foreach ($cards as $card) : ?>
@@ -41,8 +49,6 @@
             <strong>Color:</strong><?= $card['color'] ?> <br>
         </li>
     <?php endforeach; ?>
-    <!--Create page link-->
-        <a href="index.php?action=create">Create new item</a>
 </ul>
 
 </body>

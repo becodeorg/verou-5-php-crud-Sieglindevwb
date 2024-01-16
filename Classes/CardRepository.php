@@ -13,8 +13,15 @@ class CardRepository
         $this->databaseManager = $databaseManager;
     }
 
-    public function create(): void
+    public function create(string $name, string $color): void
     {
+        try {
+            $query = "INSERT INTO collection (name, color) VALUEs (?, ?)";
+            $statement = $this->databaseManager->connection->prepare($query);
+            $statement->execute([$name, $color]);
+        } catch (PDOException $error) {
+            echo $error->getMessage();
+        }
 
     }
 

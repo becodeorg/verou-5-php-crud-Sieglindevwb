@@ -43,11 +43,24 @@ function overview()
     global $cardRepository;
 
     $cards = $cardRepository->get();
-    
+
     require 'overview.php';
 }
 
 function create()
 {
     // TODO: provide the create logic
+    global $cardRepository;
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $name = $_POST['name'];
+        $color = $_POST['color'];
+
+        $cardRepository->create($name,$color);
+
+        header('location: index.php');
+        exit;
+    }
+
+    require 'create.php';
 }
