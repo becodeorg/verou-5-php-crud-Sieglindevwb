@@ -47,7 +47,8 @@
         <li>
             <strong>Name:</strong><?= $card['name'] ?> <br>
             <strong>Color:</strong><?= $card['color'] ?> <br>
-            <a href="index.php?action=edit&id=<?= $card['id'] ?>" class="create-link">Edit</a>
+            <a href="./?action=edit&id=<?= $card['id'] ?>" class="create-link">Edit</a>
+            <a href="./?action=delete&id=<?= $card['id'] ?>" onclick="return confirm('Are you sure you want to delete this item?');" class="create-link">Delete</a>
         </li>
     <?php endforeach; ?>
 </ul>
