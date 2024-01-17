@@ -40,13 +40,14 @@
 
 <h1>Flowerpower - track your collection of dried flowers</h1>
 
-<a href="index.php?action=create" class="create-link">Create new item</a>
+<a href="./?action=create" class="create-link">Create new item</a>
 
 <ul>
     <?php foreach ($cards as $card) : ?>
         <li>
             <strong>Name:</strong><?= $card['name'] ?> <br>
             <strong>Color:</strong><?= $card['color'] ?> <br>
+            <a href="index.php?action=edit&id=<?= $card['id'] ?>">Edit</a>
         </li>
     <?php endforeach; ?>
 </ul>

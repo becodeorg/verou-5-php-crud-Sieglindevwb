@@ -28,9 +28,18 @@ class CardRepository
     }
 
     // Get one
-    public function find(): array
+    public function find(int $id): array
     {
+        try {
+            $query = "SELECT * FROM collection WHERE ID = ?";
+            $statement = $this->databaseManager->connection->prepare($query);
 
+            $statement->execute([$id]);
+            return $statement->fetch(PDO::FETCH_ASSOC) ?: null;
+        } catch (PDOException $error){
+            echo $error->getMessage();
+            return null;
+        }
     }
 
     // Get all
@@ -60,9 +69,17 @@ class CardRepository
         // return $this->databaseManager->connection-> (runYourQueryHere)
     }
 
-    public function update(): void
+    public function update(string $name, string $color, int $id): void
     {
-
+        echo "Update function is executed.";
+        try {
+            $query = "UPDATE collection SET name = ?, color = ? WHERE id = ?";
+            $statement = $this->databaseManager->connection->prepare($query);
+            $statement->execute([$name, $color, $id]);
+        } catch (PDOException $error) {
+            echo $error->getMessage();
+        }
+        
     }
 
     public function delete(): void

@@ -31,6 +31,9 @@ switch ($action) {
     case 'create':
         create();
         break;
+    case 'edit':
+        edit();
+        break;
     default:
         overview();
         break;
@@ -61,4 +64,28 @@ function create()
     }
 
     require 'create.php';
+}
+
+function edit() 
+{
+    $id = (int)$_GET['id'] ?? 0;
+    global $cardRepository;
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $name = $_POST['name'] ?? '';
+        $color = $_POST['color'] ?? '';
+        
+        $cardRepository->update($name, $color, $id);
+        overview();
+
+        header('location: ./');
+        exit;
+    } 
+    $card = $cardRepository->find($id);
+
+    if (!$card) {
+        echo "Card not found";
+        exit;
+    }
+    require 'edit.php';
 }
