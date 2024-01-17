@@ -53,13 +53,11 @@ function create()
     global $cardRepository;
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $name = $_POST['name'];
-        $color = $_POST['color'];
+        $cardRepository->create();
 
-        $cardRepository->create($name,$color);
-
-        header('location: index.php');
+        header('location: ./');
         exit;
+
     }
 
     require 'create.php';

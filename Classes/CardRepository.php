@@ -13,8 +13,10 @@ class CardRepository
         $this->databaseManager = $databaseManager;
     }
 
-    public function create(string $name, string $color): void
+    public function create(): void
     {
+        $name = $_POST['name'] ?? '';
+        $color = $_POST['color'] ?? '';
         try {
             $query = "INSERT INTO collection (name, color) VALUEs (?, ?)";
             $statement = $this->databaseManager->connection->prepare($query);

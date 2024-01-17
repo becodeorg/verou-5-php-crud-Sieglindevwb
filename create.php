@@ -33,7 +33,7 @@
 <body>
     <h1>Create new dried flower item</h1>
 
-    <a href="index.php" class="create-link">Back to Overview</a>
+    <a href="./" class="create-link">Back to Overview</a>
 
     <form action="index.php?action=create" method="post">
         <label for="name">Name:</label>
