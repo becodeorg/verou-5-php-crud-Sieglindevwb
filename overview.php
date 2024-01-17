@@ -47,7 +47,7 @@
         <li>
             <strong>Name:</strong><?= $card['name'] ?> <br>
             <strong>Color:</strong><?= $card['color'] ?> <br>
-            <a href="index.php?action=edit&id=<?= $card['id'] ?>">Edit</a>
+            <a href="index.php?action=edit&id=<?= $card['id'] ?>" class="create-link">Edit</a>
         </li>
     <?php endforeach; ?>
 </ul>
